@@ -8,6 +8,7 @@ stages {
          sh '''
            echo "This is the first stage"
            '''
-         }
+	   }
+     	 }
      }
 }

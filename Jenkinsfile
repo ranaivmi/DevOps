@@ -3,20 +3,12 @@
 pipeline { 
 agent any  
 stages {
-         stage("Prepare"){ 
+         stage("First Stage"){ 
        steps{
          sh '''
-           echo "Prepare continuous delivery env"
+           echo "This is the firs stage"
            '''
          }
-     }
-
-     stage ("Build"){
-       steps {
-         sh '''
-           echo "Building app"
-         '''
-       }
      }
  }
 }

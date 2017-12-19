@@ -1,14 +1,19 @@
-#!/usr/bin/env groovy
-
 pipeline { 
 agent any  
 stages {
-         stage("First Stage") {
+         stage("Prepare"){ 
+       steps{
+         sh '''
+           echo "Prepare continuous delivery env"
+           '''
+         }
+     }
+
+     stage ("Build"){
        steps {
          sh '''
-           echo "This is the first stage"
-           '''
-	   }
-     	 }
+           echo "Building app"
+         '''
+       }
      }
 }

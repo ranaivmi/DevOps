@@ -14,7 +14,6 @@ stages {
        steps{
          sh '''
            echo "This is the second stage"
-	   sudo echo "Hello World" > /home/ubuntu/test
            '''
          }
      }

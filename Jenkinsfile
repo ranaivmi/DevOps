@@ -8,7 +8,6 @@ stages {
          sh '''
            echo "This is the first stage"
            '''
-	 checkout scm
          }
      }
 	stage("Second Stage"){ 

@@ -1,0 +1,6 @@
+---
+- name: VM Hardware Configuration Playbook
+  hosts: openstack-teachers-server
+  gather_facts: no
+  tasks:
+    - include: createTestServer.yml

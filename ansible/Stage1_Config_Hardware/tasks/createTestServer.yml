@@ -1,0 +1,14 @@
+---
+#  "ansible-playbook createTestServer.yml  -c local -vv"
+# #
+- name: Create server instance
+  os_server:
+    state: present
+    name: test-server-jenkins
+    image: 89c59f1f-db54-4de3-8efd-f355bda4d29b
+    flavor: 4C-4GB-20GB
+    security_groups: jenkins
+    key_name: hpeseance1.pem
+    auto_ip: no
+    nics:
+      - net-id: f64fdc92-f20b-47a1-979d-c5d292b93c6c # Test Network

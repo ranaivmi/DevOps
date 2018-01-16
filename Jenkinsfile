@@ -3,7 +3,7 @@
 pipeline { 
 agent any  
 stages {
-         stage("First Stage"){ 
+         stage("First Stage : Copy the code to the remote server"){ 
        steps{
          sh '''
            echo "This is the first stage"

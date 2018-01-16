@@ -8,7 +8,7 @@ stages {
          sh '''
            echo "This is the first stage"
 	   pwd
-	   ansible-playbook -i ansible/hosts ansible-test/Stage1_Copy_Code_to_Test_Server/tasks/main.yml
+	   ansible-playbook -i ansible/hosts ansible/Stage1_Copy_Code_to_Test_Server/tasks/main.yml
            '''
          }
      }

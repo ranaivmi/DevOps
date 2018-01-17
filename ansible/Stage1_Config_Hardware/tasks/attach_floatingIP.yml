@@ -1,0 +1,8 @@
+- name: Attach a floating IP address
+  os_floating_ip:
+    state: present
+    floating_ip_address: 10.11.53.41
+    server: test-server
+
+- name: Show Server's IP
+  debug: var=test-server.openstack.public_v4

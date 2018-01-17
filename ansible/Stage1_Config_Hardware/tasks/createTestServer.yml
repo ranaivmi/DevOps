@@ -6,4 +6,3 @@
     flavor: 58fdc220-1c23-44e4-8d3d-949b5776223d
     key_name: hpeseance1
     auto_ip: no
-  register: test-server

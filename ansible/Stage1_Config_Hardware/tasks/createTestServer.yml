@@ -1,3 +1,11 @@
+- name: Send notification message via Slack
+  slack:
+    token: T8DEDP22W/B8VCE6PNJ/fZS67hRnmBzaBTAVNvLYrDTO
+    msg: 'New deployment of the App'
+    username: 'Deploy-App'
+    color: warning
+  delegate_to: localhost
+  
 - name: Create server instance
   os_server:
     state: present

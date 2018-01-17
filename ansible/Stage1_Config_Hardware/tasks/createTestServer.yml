@@ -2,4 +2,4 @@
 #  "ansible-playbook createTestServer.yml  -c local -vv"
 # #
 - name: Create server instance
-    shell: nova boot --flavor v1.m1.d5 --image Ubuntu\ 17.04 --security-group default --key-name hpeseance1 test-server
+  shell: nova boot --flavor v1.m1.d5 --image Ubuntu\ 17.04 --security-group default --key-name hpeseance1 test-server

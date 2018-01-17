@@ -13,7 +13,8 @@ stages {
 	stage("Second Stage : Copy the code to the remote server"){ 
        steps{
          sh '''
-	   ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/Stage2_Copy_Code_to_Test_Server/tasks/main.yml -e \'host_key_checking=False\'
+	   echo Hello
+	   # ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/Stage2_Copy_Code_to_Test_Server/tasks/main.yml -e \'host_key_checking=False\'
            '''
          }
      }

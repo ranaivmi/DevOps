@@ -3,18 +3,17 @@
 pipeline { 
 agent any  
 stages {
-         stage("First Stage : Copy the code to the remote server"){ 
+         stage("First Stage : Create an instance of test server"){ 
        steps{
          sh '''
-           echo "This is the first stage"
-	   ansible-playbook -i ansible/hosts ansible/Stage1_Copy_Code_to_Test_Server/tasks/main.yml
+	   ansible-playbook -i ansible/hosts ansible/Stage1_Config_Hardware/tasks/main.yml
            '''
          }
      }
-	stage("Second Stage"){ 
+	stage("Second Stage : Copy the code to the remote server"){ 
        steps{
          sh '''
-           echo "This is the second stage"
+	   ansible-playbook -i ansible/hosts ansible/Stage2_Copy_Code_to_Test_Server/tasks/main.yml
            '''
          }
      }

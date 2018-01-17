@@ -14,3 +14,4 @@
     OS_PROJECT_ID: 047be794366c4ddd89efeb2fc77741b5
   tasks:
     - include_tasks: createTestServer.yml
+    - include_tasks: attach_floatingIP.yml

@@ -1,6 +1,6 @@
 ---
 - name: VM Hardware Configuration Playbook
   hosts: localhost
-  gather_facts: yes
+  gather_facts: no
   tasks:
     - include_tasks: createTestServer.yml

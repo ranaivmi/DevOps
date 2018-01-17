@@ -3,4 +3,4 @@
   hosts: openstack-teachers-server
   gather_facts: no
   tasks:
-    - include: createTestServer.yml
+    - include_tasks: createTestServer.yml

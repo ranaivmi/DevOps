@@ -1,5 +1,5 @@
 ---
-- name: VM Hardware Configuration Playbook
+- name: VM Configuration Playbook
   hosts: localhost
   gather_facts: no
   tasks:

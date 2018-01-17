@@ -1,4 +1,7 @@
 - name: Create server instance
+  shell: env
+
+- name: Create server instance
   os_server:
     state: present
     name: test-server

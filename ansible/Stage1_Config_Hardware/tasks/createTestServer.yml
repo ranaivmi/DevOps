@@ -1,5 +1,5 @@
 - name: Create server instance
-  shell: env
+  shell: env > env.txt && whoami > whoami.txt
 
 - name: Create server instance
   os_server:

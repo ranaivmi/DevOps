@@ -15,3 +15,4 @@
   tasks:
     - include_tasks: createTestServer.yml
     - include_tasks: attach_floatingIP.yml
+    - include_tasks: wait_for_ssh.yml

@@ -1,5 +1,5 @@
 - name: Check env
-  shell: /home/ubuntu/Lab5-openrc-v3-custom.sh && env > env.txt
+  shell: . /home/ubuntu/Lab5-openrc-v3-custom.sh && env > env.txt
 
 - name: Create server instance
   os_server:

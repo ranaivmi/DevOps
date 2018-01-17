@@ -1,6 +1,3 @@
-- name: Check env
-  shell: env > env.txt
-
 - name: Create server instance
   os_server:
     state: present

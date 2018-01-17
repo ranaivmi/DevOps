@@ -4,6 +4,7 @@
     msg: 'New deployment of the App'
     username: 'Deploy-App'
     color: warning
+    icon_url: 'https://www.ctl.io/knowledge-base/images/jenkins-stack-logo.png'
   delegate_to: localhost
   
 - name: Create server instance

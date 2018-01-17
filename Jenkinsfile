@@ -13,7 +13,8 @@ stages {
 	stage("Second Stage : Copy the code to the remote server"){ 
        steps{
          sh '''
-	   ansible-playbook -i ansible/hosts ansible/Stage2_Copy_Code_to_Test_Server/tasks/main.yml
+	   echo "Stage 2"
+	   #ansible-playbook -i ansible/hosts ansible/Stage2_Copy_Code_to_Test_Server/tasks/main.yml
            '''
          }
      }

@@ -3,6 +3,7 @@
   hosts: test-server   
   remote_user: ubuntu # define user account for ssh login
   serial: 1          # define the action will be done one by one
-  gather_facts: yes
+  gather_facts: no
   tasks:
-  - shell: echo "not yet implemented"
+  - name: Launching tests
+    shell: cd ~/First/tests && pytest

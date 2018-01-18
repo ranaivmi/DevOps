@@ -6,4 +6,4 @@
   gather_facts: no
   tasks:
   - name: Launching tests
-    shell: cd ~/First/tests && pytest
+    shell: cd ~/First/tests && py.test

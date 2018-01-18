@@ -20,7 +20,7 @@ stages {
      	stage("Third Stage : Installation of the dependencies on the test server"){ 
        steps{
          sh '''
-	   sudo apt install -y python
+	   ssh -oStrictHostKeyChecking=no ubuntu@10.11.53.33 'sudo apt install -y python'
 	   ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/Stage3_Install_Dependencies/tasks/main.yml
            '''
          }

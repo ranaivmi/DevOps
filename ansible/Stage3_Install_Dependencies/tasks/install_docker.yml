@@ -13,6 +13,10 @@
   with_items:
     - "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
 
+- name : apt update
+  become: true
+  shell: apt update
+
 - name: Install docker
   become: true
   shell: apt install -y docker-ce

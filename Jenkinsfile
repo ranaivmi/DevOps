@@ -15,6 +15,7 @@ stages {
      }
      	stage("Third Stage : Installation of the dependencies"){ 
        steps{
+         sh 'echo Hello'
          }
      }
 

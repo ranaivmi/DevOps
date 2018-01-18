@@ -10,17 +10,17 @@ stages {
            '''
          }
      }
-	stage("Second Stage : Copy the code to the remote server"){ 
+	stage("Second Stage : Copy the code to the test server"){ 
        steps{
          sh '''
 	   ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/Stage2_Copy_Code_to_Test_Server/tasks/main.yml
            '''
          }
      }
-     	stage("Third Stage : Installation of the dependencies on the test server"){ 
+     	stage("Third Stage : Installation of the dependencies"){ 
        steps{
          sh '''
-	   ssh -oStrictHostKeyChecking=no ubuntu@10.11.53.33 'sudo apt install -y python'
+	   ssh -oStrictHostKeyChecking=no ubuntu@10.11.53.41 'sudo apt install -y python'
 	   ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/Stage3_Install_Dependencies/tasks/main.yml
            '''
          }

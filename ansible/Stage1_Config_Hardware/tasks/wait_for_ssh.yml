@@ -2,7 +2,7 @@
 - name: Wait for server to restart
   local_action:
     module: wait_for
-      host=10.11.53.41
+      host=10.11.53.44
       port=22
       delay=1
       timeout=300

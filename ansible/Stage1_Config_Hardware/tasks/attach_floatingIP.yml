@@ -1,5 +1,5 @@
 - name: Attach a floating IP address
   os_floating_ip:
     state: present
-    floating_ip_address: 10.11.53.41
-    server: test-server
+    floating_ip_address: 10.11.53.44
+    server: test-deploy

@@ -10,7 +10,7 @@
 - name: Create server instance
   os_server:
     state: present
-    name: test-deploy
+    name: test-server
     image: 4c8f1190-d2ca-4a13-8de7-ad49cf16fd77
     flavor: b046fd71-e841-43df-ad97-c572bf3c30d3
     key_name: hpeseance1

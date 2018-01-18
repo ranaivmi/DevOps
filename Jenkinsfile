@@ -19,6 +19,16 @@ stages {
 	 sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/Stage3_Install_Dependencies/tasks/main.yml'
          }
      }
+     	stage("Fourth Stage : Launching the application"){ 
+       steps{
+	 sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/Stage4_Launching_App/tasks/main.yml'
+         }
+     }
+     	stage("Fifth Stage : Launching tests"){ 
+       steps{
+	 sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/Stage5_Launching_Tests/tasks/main.yml'
+         }
+     }
 
  }
 }

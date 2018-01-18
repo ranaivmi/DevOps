@@ -1,0 +1,3 @@
+---
+- name: Install pytest
+  pip: requirements=/home/ubuntu/First/test-requirements.txt

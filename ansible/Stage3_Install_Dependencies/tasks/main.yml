@@ -7,4 +7,4 @@
   tasks:
   - include_tasks: install_docker.yml     
   - include_tasks: install_docker_compose.yml
-  - include_tasks: install_pytest.yml
+  - include_tasks: install_python_dependencies.yml

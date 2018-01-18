@@ -1,4 +1,4 @@
 ---
 - name: Install docker compose
   become: true
-  shell: apt install -y docker-compose
+  apt: name=docker-compose state=present

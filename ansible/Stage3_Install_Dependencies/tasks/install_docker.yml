@@ -16,11 +16,10 @@
 - name: apt update
   become: true
   apt: update_cache=yes cache_valid_time=3600
-  ignore_errors: yes
 
 - name: Install docker
   become: true
-  shell: apt install -y docker-ce
+  apt: name=docker-ce state=present
 
 - name: Add user mod
   become: true

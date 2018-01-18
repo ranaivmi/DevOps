@@ -1,6 +1,4 @@
 ---
-- name: install maven (and other packages if needed)
+- name: Install docker compose
   become: true
-  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time=3600
-  with_items:
-    - docker-compose
+  shell: apt install -y docker-compose

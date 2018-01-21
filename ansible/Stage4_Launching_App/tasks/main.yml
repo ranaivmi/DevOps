@@ -23,8 +23,7 @@
     register: docker_worker_token
     tags:
     - skip_ansible_lint # Suppressing the linter
-  - set_fact: docker_worker_token="something"
-
+    
 
 - name:
   hosts: test-worker-1

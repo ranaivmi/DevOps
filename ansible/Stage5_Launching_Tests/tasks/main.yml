@@ -6,4 +6,4 @@
   gather_facts: no
   tasks:
   - name: Launching tests
-    shell: cd ~/First/tests && py.test
+    shell: cd ~/Deploy-CNA/tests && py.test

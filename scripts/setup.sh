@@ -6,7 +6,7 @@ echo "[+] End installation"
 
 echo "[*] Configuration of nginx"
 sudo unlink /etc/nginx/sites-enabled/default
-sudo mv reverse-proxy.conf /etc/nginx/sites-available/
+sudo mv config/reverse-proxy.conf /etc/nginx/sites-available/
 sudo ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/reverse-proxy.conf
 sudo mkdir /var/log/nginx/jenkins
 echo "[+] End of the configuration"

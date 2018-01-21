@@ -1,16 +1,16 @@
 #!/bin/bash
 
-echo "[*] Installation de Jenkins et nginx"
+echo "[*] Installation of Jenkins et nginx"
 bash install.sh
-echo "[+] Fin de l'installation"
+echo "[+] End installation"
 
-echo "[*] Configuration de nginx"
+echo "[*] Configuration of nginx"
 sudo unlink /etc/nginx/sites-enabled/default
-sudo mv config/reverse-proxy.conf /etc/nginx/sites-available/
+sudo mv reverse-proxy.conf /etc/nginx/sites-available/
 sudo ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/reverse-proxy.conf
 sudo mkdir /var/log/nginx/jenkins
-echo "[+] Fin de la configuration"
+echo "[+] End of the configuration"
 
-echo "[*] Redémarrage de nginx"
+echo "[*] Restart of nginx"
 sudo systemctl restart nginx
-echo "[+] Fin du redémarrage"
+echo "[+] End of the restart"

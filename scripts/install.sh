@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Installation de Jenkins
-echo -e "\n### Installation de Jenkins ###"
+# Installation of Jenkins
+echo -e "\n### Installation of Jenkins ###"
 wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
 sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 sudo apt update
 sudo apt install -y jenkins
 
-# Installation de nginx
-echo -e "\n### Installation de nginx ###"
+# Installation of nginx
+echo -e "\n### Installation of nginx ###"
 sudo apt install -y nginx

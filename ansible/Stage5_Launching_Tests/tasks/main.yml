@@ -1,6 +1,6 @@
 ---
 - name: 
-  hosts: test-server   
+  hosts: test-manager   
   remote_user: ubuntu # define user account for ssh login
   serial: 1          # define the action will be done one by one
   gather_facts: no

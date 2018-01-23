@@ -10,7 +10,7 @@ stages {
      }
      	stage("Second Stage : Copy the code to the test-manager server"){ 
        steps{
-         sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/test/Stage3_Copy_Code_to_Test_Server/tasks/main.yml'
+         sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/test/Stage2_Copy_Code_to_Test_Server/tasks/main.yml'
          }
      }
 
@@ -18,7 +18,7 @@ stages {
        steps{
          sh 'ssh -oStrictHostKeyChecking=no ubuntu@10.11.53.41 \'test -e /usr/bin/python || (sudo apt update && sudo apt install -y python)\''
 	 sh 'ssh -oStrictHostKeyChecking=no ubuntu@10.11.53.30 \'test -e /usr/bin/python || (sudo apt update && sudo apt install -y python)\''
-	 sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/test/Stage2_Install_Dependencies/tasks/main.yml'
+	 sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/test/Stage3_Install_Dependencies/tasks/main.yml'
          }
      }
      	stage("Fourth Stage : Launching the application on test environment"){ 

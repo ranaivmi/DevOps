@@ -38,7 +38,7 @@ stages {
      }
      	stage("Seventh Stage : Copy the code to the prod-manager server"){ 
        steps{
-         sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/prod/Stage7_Copy_Code_to_Test_Server/tasks/main.yml'
+         sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/prod/Stage7_Copy_Code_to_Prod_Server/tasks/main.yml'
          }
      }
 

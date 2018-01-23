@@ -1,0 +1,16 @@
+---
+- name: VM Configuration Playbook
+  hosts: localhost
+  gather_facts: no
+  environment:
+    OS_USERNAME: admin
+    OS_PASSWORD: 6a474984c39f4d24
+    OS_AUTH_URL: "http://10.11.51.161:5000/v3"
+    OS_PROJECT_NAME: admin
+    OS_USER_DOMAIN_NAME: Default
+    OS_PROJECT_DOMAIN_NAME: Default
+    OS_IDENTITY_API_VERSION: 3
+  tasks:
+    - include_tasks: createTestServer.yml
+    - include_tasks: attach_floatingIP.yml
+    - include_tasks: wait_for_ssh.yml

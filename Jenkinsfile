@@ -33,12 +33,12 @@ stages {
      }
         stage("Sixth Stage : Create instances of prod servers"){ 
        steps{
-         sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts  --vault-password-file=/var/lib/jenkins/vault/vault.key ansible/test/Stage6_Config_Hardware/tasks/main.yml'
+         sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts  --vault-password-file=/var/lib/jenkins/vault/vault.key ansible/prod/Stage6_Config_Hardware/tasks/main.yml'
          }
      }
      	stage("Seventh Stage : Copy the code to the prod-manager server"){ 
        steps{
-         sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/test/Stage7_Copy_Code_to_Test_Server/tasks/main.yml'
+         sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/prod/Stage7_Copy_Code_to_Test_Server/tasks/main.yml'
          }
      }
 

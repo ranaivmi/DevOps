@@ -44,8 +44,8 @@ stages {
 
      	stage("Eighth Stage : Installation of the dependencies"){ 
        steps{
-         sh 'ssh -oStrictHostKeyChecking=no ubuntu@10.11.53.93 \'test -e /usr/bin/python || (sudo apt update && sudo apt install -y python)\''
-	 sh 'ssh -oStrictHostKeyChecking=no ubuntu@10.11.53.98 \'test -e /usr/bin/python || (sudo apt update && sudo apt install -y python)\''
+         sh 'ssh -oStrictHostKeyChecking=no ubuntu@10.11.54.93 \'test -e /usr/bin/python || (sudo apt update && sudo apt install -y python)\''
+	 sh 'ssh -oStrictHostKeyChecking=no ubuntu@10.11.54.98 \'test -e /usr/bin/python || (sudo apt update && sudo apt install -y python)\''
 	 sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/prod/Stage8_Install_Dependencies/tasks/main.yml'
          }
      }

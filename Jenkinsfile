@@ -8,16 +8,17 @@ stages {
          sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts  --vault-password-file=/var/lib/jenkins/vault/vault.key ansible/test/Stage1_Config_Hardware/tasks/main.yml'
          }
      }
-     	stage("Second Stage : Installation of the dependencies"){ 
+     	stage("Second Stage : Copy the code to the manager server"){ 
+       steps{
+         sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/test/Stage3_Copy_Code_to_Test_Server/tasks/main.yml'
+         }
+     }
+
+     	stage("Third Stage : Installation of the dependencies"){ 
        steps{
          sh 'ssh -oStrictHostKeyChecking=no ubuntu@10.11.53.41 \'test -e /usr/bin/python || (sudo apt update && sudo apt install -y python)\''
 	 sh 'ssh -oStrictHostKeyChecking=no ubuntu@10.11.53.30 \'test -e /usr/bin/python || (sudo apt update && sudo apt install -y python)\''
 	 sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/test/Stage2_Install_Dependencies/tasks/main.yml'
-         }
-     }
-	stage("Third Stage : Copy the code to the manager server"){ 
-       steps{
-         sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts ansible/test/Stage3_Copy_Code_to_Test_Server/tasks/main.yml'
          }
      }
      	stage("Fourth Stage : Launching the application"){ 

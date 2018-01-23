@@ -5,7 +5,7 @@ agent any
 stages {
          stage("First Stage : Create instances of test servers"){ 
        steps{
-         sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts  --vault-password-file=/var/lib/jenkins/vault/vault.key ansible/test/Stage1_Config_Hardware/tasks/main.yml'
+         sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts --vault-password-file=/var/lib/jenkins/vault/vault.key ansible/test/Stage1_Config_Hardware/tasks/main.yml'
          }
      }
      	stage("Second Stage : Copy the code to the test-manager server"){ 
@@ -33,7 +33,7 @@ stages {
      }
         stage("Sixth Stage : Create instances of prod servers"){ 
        steps{
-         sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts  --vault-password-file=/var/lib/jenkins/vault/vault.key ansible/prod/Stage6_Config_Hardware/tasks/main.yml'
+         sh 'ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i ansible/hosts --vault-password-file=/var/lib/jenkins/vault/vault.key ansible/prod/Stage6_Config_Hardware/tasks/main.yml'
          }
      }
      	stage("Seventh Stage : Copy the code to the prod-manager server"){ 
